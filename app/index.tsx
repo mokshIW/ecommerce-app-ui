@@ -9,8 +9,7 @@ import React from "react";
 import { Link, Stack } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "@/constants/Colors";
-import { Ionicons } from "@expo/vector-icons";
-import Animated, { FadeInDown, FadeInRight } from "react-native-reanimated";
+import Animated, { FadeInRight } from "react-native-reanimated";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 
 type Props = {};
