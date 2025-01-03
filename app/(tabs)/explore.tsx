@@ -5,6 +5,7 @@ import { CategoryType } from "@/types/type";
 import { Stack } from "expo-router";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Colors } from "@/constants/Colors";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 type Props = {};
 
@@ -32,13 +33,17 @@ const ExploreScreen = (props: Props) => {
           keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}
           renderItem={({ item, index }) => (
-            <View key={index} style={styles.itemWrapper}>
+            <Animated.View
+              key={index}
+              style={styles.itemWrapper}
+              entering={FadeInDown.delay(300 + index * 100).duration(500)}
+            >
               <Image
                 source={{ uri: item.image }}
                 style={{ width: 100, height: 100, borderRadius: 10 }}
               />
               <Text style={styles.itemTitle}>{item.name}</Text>
-            </View>
+            </Animated.View>
           )}
         />
       </View>
